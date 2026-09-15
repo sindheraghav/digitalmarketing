@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Growth Tech | Premium Digital Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0A0A14',
+                            deep: '#1A1A2E',
+                            purple: '#8A2BE2',
+                            pink: '#FF1493',
+                            blue: '#00BFFF',
+                            muted: '#A0A0A0',
+                            light: '#E0E0E0'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif']
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0A0A14;
+            color: #FFFFFF;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(138, 43, 226, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #8A2BE2, #FF1493, #00BFFF);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 5s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(138, 43, 226, 0.15), transparent),
+                        radial-gradient(circle at bottom left, rgba(0, 191, 255, 0.15), transparent);
+        }
+
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            background: rgba(10, 10, 20, 0.8);
+        }
+
+        .mobile-menu-active {
+            transform: translateX(0) !important;
+        }
+
+        /* Video Background Overlay */
+        .video-overlay {
+            background: linear-gradient(to bottom, rgba(10, 10, 20, 0.7), rgba(10, 10, 20, 0.9));
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0A0A14; }
+        ::-webkit-scrollbar-thumb { background: #1A1A2E; border-radius: 10px; border: 2px solid #0A0A14; }
+        ::-webkit-scrollbar-thumb:hover { background: #8A2BE2; }
+
+        .pricing-highlight {
+            background: linear-gradient(145deg, rgba(138, 43, 226, 0.1), rgba(255, 20, 147, 0.05));
+            border: 2px solid #8A2BE2;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/7483082922" target="_blank" class="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 animate-bounce">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-purple to-brand-pink flex items-center justify-center">
+                        <span class="font-display font-bold text-xl">R</span>
+                    </div>
+                    <span class="font-display font-bold text-xl tracking-tight">REAL GROWTH <span class="text-brand-purple">TECH</span></span>
+                </div>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-sm font-medium hover:text-brand-purple transition-colors">Services</a>
+                    <a href="#why-us" class="text-sm font-medium hover:text-brand-purple transition-colors">Why Us</a>
+                    <a href="#pricing" class="text-sm font-medium hover:text-brand-purple transition-colors">Pricing</a>
+                    <a href="#contact" class="text-sm font-medium hover:text-brand-purple transition-colors">Contact</a>
+                    <a href="mailto:sindheraghav@gmail.com" class="px-6 py-2.5 rounded-full bg-gradient-to-r from-brand-purple to-brand-pink text-white text-sm font-bold hover:opacity-90 transition-opacity">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-dark transform translate-x-full transition-transform duration-300 md:hidden flex flex-col items-center justify-center space-y-8">
+        <a href="#services" class="mobile-link text-2xl font-bold">Services</a>
+        <a href="#why-us" class="mobile-link text-2xl font-bold">Why Us</a>
+        <a href="#pricing" class="mobile-link text-2xl font-bold">Pricing</a>
+        <a href="#contact" class="mobile-link text-2xl font-bold">Contact</a>
+        <a href="mailto:sindheraghav@gmail.com" class="mobile-link px-8 py-3 rounded-full bg-brand-purple text-xl font-bold">Get Started</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                <source src="https://videos.pexels.com/video-files/6561429/6561429-sd_640_360_25fps.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 video-overlay"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <h1 class="font-display text-5xl md:text-8xl font-black mb-6 tracking-tighter">
+                REAL GROWTH <br><span class="gradient-text">TECH</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-brand-light font-medium tracking-widest uppercase mb-10 opacity-90">
+                Website Designing • Development • SEO • Lead Gen
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#services" class="group relative px-8 py-4 w-64 rounded-full overflow-hidden border-2 border-brand-purple transition-all hover:bg-brand-purple">
+                    <span class="relative z-10 font-bold tracking-wider group-hover:text-white">EXPLORE SERVICES</span>
+                </a>
+                <a href="mailto:sindheraghav@gmail.com" class="px-8 py-4 w-64 rounded-full bg-white text-brand-dark font-bold tracking-wider hover:bg-brand-light transition-colors">
+                    GET STARTED
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Stats & Transformation Section -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold mb-6 leading-tight">
+                        Transform Your <br><span class="gradient-text">Business Today</span>
+                    </h2>
+                    <p class="text-brand-muted text-lg mb-8 leading-relaxed">
+                        In the digital age, growth isn't just about presence; it's about performance. We craft tailored digital marketing solutions that don't just look good—they drive measurable growth and sustainable success.
+                    </p>
+                    <div class="grid grid-cols-3 gap-8 mb-10">
+                        <div>
+                            <div class="text-3xl font-bold text-brand-purple mb-1">200+</div>
+                            <div class="text-xs uppercase tracking-widest text-brand-muted">Campaigns</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-brand-pink mb-1">15+</div>
+                            <div class="text-xs uppercase tracking-widest text-brand-muted">Years</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-brand-blue mb-1">98%</div>
+                            <div class="text-xs uppercase tracking-widest text-brand-muted">Satisfaction</div>
+                        </div>
+                    </div>
+                    <a href="mailto:sindheraghav@gmail.com" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-brand-purple to-brand-pink font-bold hover:scale-105 transition-transform">
+                        Start Your Growth Journey <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-brand-purple to-brand-blue opacity-20 blur-2xl rounded-full"></div>
+                    <div class="relative rounded-2xl overflow-hidden glass-card p-2">
+                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663390153326/yfiTQSnpFqlOuQfy.jpeg" alt="Business Growth" class="w-full h-auto rounded-xl shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-brand-deep/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">
+                    Our <span class="text-brand-blue">Digital Marketing</span> Services
+                </h2>
+                <p class="text-brand-muted text-lg">
+                    We provide a full spectrum of innovative digital marketing solutions to empower your business.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Cards -->
+                <div class="glass-card p-0 rounded-3xl group overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663390153326/HejHdfhFcwIPUQDW.jpeg" alt="Web Design" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-purple/20 flex items-center justify-center mb-6 text-brand-purple group-hover:bg-brand-purple group-hover:text-white transition-all">
+                            <i class="fas fa-laptop-code text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Web Design & Dev</h3>
+                        <p class="text-brand-muted leading-relaxed">Responsive, high-performance websites built to convert visitors into loyal customers.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-0 rounded-3xl group overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663390153326/mEksYLVvMHeTiJCH.jpeg" alt="SEO Optimization" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-pink/20 flex items-center justify-center mb-6 text-brand-pink group-hover:bg-brand-pink group-hover:text-white transition-all">
+                            <i class="fas fa-search text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">SEO Optimization</h3>
+                        <p class="text-brand-muted leading-relaxed">Dominate search results and drive organic traffic with our data-driven SEO strategies.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-0 rounded-3xl group overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663390153326/xvSgKISVRGPlQcsH.jpeg" alt="Social Media Marketing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-blue/20 flex items-center justify-center mb-6 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all">
+                            <i class="fas fa-share-alt text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Social Media Marketing</h3>
+                        <p class="text-brand-muted leading-relaxed">Engage your audience where they live. We build communities and drive viral growth.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-0 rounded-3xl group overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663390153326/dLZYAYNthMcCVlFs.jpeg" alt="Content Marketing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-purple/20 flex items-center justify-center mb-6 text-brand-purple group-hover:bg-brand-purple group-hover:text-white transition-all">
+                            <i class="fas fa-pen-nib text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Content Marketing</h3>
+                        <p class="text-brand-muted leading-relaxed">Compelling storytelling that establishes authority and nurtures leads through the funnel.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-0 rounded-3xl group overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663390153326/HfPfJIDMbtUvFXxy.jpeg" alt="SEM Advertising" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-pink/20 flex items-center justify-center mb-6 text-brand-pink group-hover:bg-brand-pink group-hover:text-white transition-all">
+                            <i class="fas fa-bullhorn text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">SEM Advertising</h3>
+                        <p class="text-brand-muted leading-relaxed">Precision-targeted PPC campaigns that deliver immediate ROI and high-quality leads.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-0 rounded-3xl group overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663390153326/DvyEPZQZARoTOMzm.jpeg" alt="Analytics & Reporting" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-blue/20 flex items-center justify-center mb-6 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all">
+                            <i class="fas fa-chart-bar text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Analytics & Reporting</h3>
+                        <p class="text-brand-muted leading-relaxed">Transparent insights into your performance. We track every metric that matters to you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-24 relative overflow-hidden hero-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+                <div class="order-2 lg:order-1 relative">
+                    <div class="absolute -inset-10 bg-brand-purple opacity-10 blur-3xl rounded-full"></div>
+                    <div class="glass-card p-10 rounded-[3rem] space-y-8">
+                        <div class="flex gap-6 items-start">
+                            <div class="w-12 h-12 rounded-full bg-brand-purple flex-shrink-0 flex items-center justify-center"><i class="fas fa-award"></i></div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">Award-Winning Expertise</h4>
+                                <p class="text-brand-muted">Industry-recognized strategies delivered by elite professionals.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6 items-start">
+                            <div class="w-12 h-12 rounded-full bg-brand-pink flex-shrink-0 flex items-center justify-center"><i class="fas fa-arrow-up"></i></div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">Measurable Growth</h4>
+                                <p class="text-brand-muted">No vanity metrics—only real business results that impact your bottom line.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6 items-start">
+                            <div class="w-12 h-12 rounded-full bg-brand-blue flex-shrink-0 flex items-center justify-center"><i class="fas fa-hands-helping"></i></div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">Dedicated Partnership</h4>
+                                <p class="text-brand-muted">We don't just work for you; we work with you as an extension of your team.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <div class="mb-8 rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663390153326/CmLdsSKZfrdGCFwt.jpeg" alt="Our Team" class="w-full h-64 object-cover">
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold mb-8">
+                        Why Choose <br><span class="text-brand-pink">Real Growth Tech?</span>
+                    </h2>
+                    <p class="text-brand-muted text-lg mb-8">
+                        Our commitment to your success is underpinned by our core values and expertise. We blend creative thinking with technological precision.
+                    </p>
+                    <div class="flex items-center gap-4 text-sm font-bold uppercase tracking-widest text-brand-light">
+                        <span class="w-12 h-[2px] bg-brand-pink"></span>
+                        Trusted by industry leaders
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="text-center mb-16">
+                <h3 class="text-3xl font-display font-bold mb-4">What Our <span class="text-brand-purple">Clients Say</span></h3>
+                <p class="text-brand-muted">Real results from real businesses</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-3xl italic relative">
+                    <i class="fas fa-quote-left absolute top-6 right-6 text-brand-purple/20 text-4xl"></i>
+                    <p class="text-brand-light mb-6">"Their strategic approach transformed our online presence in months. We've seen a 300% increase in leads."</p>
+                    <div class="flex items-center gap-4 not-italic">
+                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663390153326/xKplBSoVFEKQbXtr.jpeg" alt="Rajesh Kumar" class="w-12 h-12 rounded-full object-cover border-2 border-brand-purple">
+                        <div>
+                            <div class="font-bold">Rajesh Kumar</div>
+                            <div class="text-xs text-brand-muted uppercase tracking-wider">CEO, Tech Solutions</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-3xl italic relative">
+                    <i class="fas fa-quote-left absolute top-6 right-6 text-brand-pink/20 text-4xl"></i>
+                    <p class="text-brand-light mb-6">"The best investment we made this year. Professional, responsive, and incredibly effective."</p>
+                    <div class="flex items-center gap-4 not-italic">
+                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663390153326/SynsUoDMadVDxSsK.jpeg" alt="Priya Sharma" class="w-12 h-12 rounded-full object-cover border-2 border-brand-pink">
+                        <div>
+                            <div class="font-bold">Priya Sharma</div>
+                            <div class="text-xs text-brand-muted uppercase tracking-wider">Marketing Director, InnovateX</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-3xl italic relative">
+                    <i class="fas fa-quote-left absolute top-6 right-6 text-brand-blue/20 text-4xl"></i>
+                    <p class="text-brand-light mb-6">"They understand digital growth like nobody else. A true partner in our e-commerce journey."</p>
+                    <div class="flex items-center gap-4 not-italic">
+                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663390153326/FFbImlGvqColDJAn.jpeg" alt="Amit Patel" class="w-12 h-12 rounded-full object-cover border-2 border-brand-blue">
+                        <div>
+                            <div class="font-bold">Amit Patel</div>
+                            <div class="text-xs text-brand-muted uppercase tracking-wider">Founder, E-commerce Group</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">
+                    Simple, Transparent <span class="text-brand-pink">Pricing</span>
+                </h2>
+                <p class="text-brand-muted text-lg">
+                    Choose the perfect plan for your business needs.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 items-stretch">
+                <!-- Starter -->
+                <div class="glass-card p-10 rounded-[2.5rem] flex flex-col">
+                    <div class="mb-8">
+                        <span class="text-brand-muted font-bold uppercase tracking-widest text-xs">Starter</span>
+                        <div class="text-4xl font-bold mt-2">₹9,000<span class="text-lg text-brand-muted">/mo</span></div>
+                    </div>
+                    <ul class="space-y-4 mb-10 flex-grow">
+                        <li class="flex items-center gap-3 text-sm text-brand-light">
+                            <i class="fas fa-check text-brand-purple"></i> Basic Website Design (5 pages)
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-brand-light">
+                            <i class="fas fa-check text-brand-purple"></i> Basic SEO (5 keywords)
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-brand-light">
+                            <i class="fas fa-check text-brand-purple"></i> Social Media Setup
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-brand-light">
+                            <i class="fas fa-check text-brand-purple"></i> Monthly Performance Tracking
+                        </li>
+                    </ul>
+                    <a href="mailto:sindheraghav@gmail.com" class="w-full py-4 text-center rounded-2xl border border-white/20 hover:bg-white/10 transition-colors font-bold">
+                        Choose Starter
+                    </a>
+                </div>
+
+                <!-- Professional -->
+                <div class="glass-card p-10 rounded-[2.5rem] flex flex-col pricing-highlight relative">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-brand-purple rounded-full text-[10px] font-bold uppercase tracking-widest">Most Popular</div>
+                    <div class="mb-8">
+                        <span class="text-brand-purple font-bold uppercase tracking-widest text-xs">Professional</span>
+                        <div class="text-4xl font-bold mt-2">₹18,000<span class="text-lg text-brand-muted">/mo</span></div>
+                    </div>
+                    <ul class="space-y-4 mb-10 flex-grow">
+                        <li class="flex items-center gap-3 text-sm text-brand-light">
+                            <i class="fas fa-check text-brand-purple"></i> Advanced Website (10 pages)
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-brand-light">
+                            <i class="fas fa-check text-brand-purple"></i> Advanced SEO (15 keywords)
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-brand-light">
+                            <i class="fas fa-check text-brand-purple"></i> Social Media Management
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-brand-light">
+                            <i class="fas fa-check text-brand-purple"></i> Weekly Performance Tracking
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-brand-light">
+                            <i class="fas fa-check text-brand-purple"></i> Content Marketing (2 blogs/mo)
+                        </li>
+                    </ul>
+                    <a href="mailto:sindheraghav@gmail.com" class="w-full py-4 text-center rounded-2xl bg-gradient-to-r from-brand-purple to-brand-pink hover:opacity-90 transition-opacity font-bold">
+                        Choose Professional
+                    </a>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="glass-card p-10 rounded-[2.5rem] flex flex-col">
+                    <div class="mb-8">
+                        <span class="text-brand-muted font-bold uppercase tracking-widest text-xs">Enterprise</span>
+                        <div class="text-4xl font-bold mt-2">₹35,000<span class="text-lg text-brand-muted">/mo</span></div>
+                    </div>
+                    <ul class="space-y-4 mb-10 flex-grow">
+                        <li class="flex items-center gap-3 text-sm text-brand-light">
+                            <i class="fas fa-check text-brand-purple"></i> Custom E-commerce Solution
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-brand-light">
+                            <i class="fas fa-check text-brand-purple"></i> Full SEO Suite (Unlimited)
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-brand-light">
+                            <i class="fas fa-check text-brand-purple"></i> Dedicated Account Manager
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-brand-light">
+                            <i class="fas fa-check text-brand-purple"></i> Daily Performance Tracking
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-brand-light">
+                            <i class="fas fa-check text-brand-purple"></i> SEM & PPC Management
+                        </li>
+                    </ul>
+                    <a href="mailto:sindheraghav@gmail.com" class="w-full py-4 text-center rounded-2xl border border-white/20 hover:bg-white/10 transition-colors font-bold">
+                        Choose Enterprise
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-[3rem] overflow-hidden">
+                <div class="grid lg:grid-cols-2">
+                    <div class="p-12 lg:p-20 bg-gradient-to-br from-brand-purple/20 to-brand-pink/20">
+                        <h2 class="text-4xl md:text-5xl font-display font-bold mb-8">Ready to <br><span class="gradient-text">Scale Up?</span></h2>
+                        <p class="text-brand-light text-lg mb-12 opacity-80">Let's discuss how we can transform your digital presence and drive real growth for your business.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-6">
+                                <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center"><i class="fas fa-envelope text-brand-purple"></i></div>
+                                <div>
+                                    <div class="text-xs uppercase tracking-widest text-brand-muted mb-1">Email Us</div>
+                                    <div class="font-bold">sindheraghav@gmail.com</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-6">
+                                <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center"><i class="fas fa-phone text-brand-pink"></i></div>
+                                <div>
+                                    <div class="text-xs uppercase tracking-widest text-brand-muted mb-1">Call Us</div>
+                                    <div class="font-bold">+91 74830 82922</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-12 lg:p-20">
+                        <form class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-widest text-brand-muted mb-2">Name</label>
+                                    <input type="text" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-purple transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-widest text-brand-muted mb-2">Email</label>
+                                    <input type="email" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-purple transition-colors">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-widest text-brand-muted mb-2">Message</label>
+                                <textarea rows="4" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-purple transition-colors"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-4 rounded-xl bg-white text-brand-dark font-bold hover:bg-brand-light transition-colors uppercase tracking-widest">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded bg-gradient-to-br from-brand-purple to-brand-pink flex items-center justify-center">
+                        <span class="font-display font-bold text-sm">R</span>
+                    </div>
+                    <span class="font-display font-bold tracking-tight">REAL GROWTH <span class="text-brand-purple">TECH</span></span>
+                </div>
+                <div class="flex gap-8">
+                    <a href="#" class="text-brand-muted hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-brand-muted hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-brand-muted hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-brand-muted hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="text-brand-muted text-sm space-x-6">
+                    <a href="#services" class="hover:text-brand-purple transition-colors">Services</a>
+                    <a href="#why-us" class="hover:text-brand-purple transition-colors">Why Us</a>
+                    <a href="#pricing" class="hover:text-brand-purple transition-colors">Pricing</a>
+                    <a href="mailto:sindheraghav@gmail.com" class="hover:text-brand-purple transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('mobile-menu-active');
+            menuIcon.classList.toggle('fa-bars');
+            menuIcon.classList.toggle('fa-times');
+            document.body.classList.toggle('overflow-hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('mobile-menu-active');
+                menuIcon.classList.add('fa-bars');
+                menuIcon.classList.remove('fa-times');
+                document.body.classList.remove('overflow-hidden');
+            });
+        });
+
+        // Smooth reveal on scroll
+        const revealElements = document.querySelectorAll('.glass-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.add('translate-y-0');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => {
+            el.classList.add('opacity-0');
+            el.classList.add('translate-y-10');
+            observer.observe(el);
+        });
+
+        // Sticky Nav effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-4');
+                nav.classList.remove('py-0');
+            } else {
+                nav.classList.add('py-0');
+            }
+        });
+    </script>
+</body>
+</html>

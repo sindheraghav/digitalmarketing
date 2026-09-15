@@ -3,7 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Growth Tech | Premium Digital Solutions</title>
+        <meta name="description" content="Real Growth Tech is a premium digital marketing agency offering expert web design, SEO optimization, and lead generation services to scale your business in India and globally.">
+    <meta name="keywords" content="Digital Marketing Agency, Web Design, SEO Optimization, Lead Generation, Social Media Marketing, Real Growth Tech, India">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://realgrowthtech.com/">
+    <meta property="og:title" content="Real Growth Tech | Premium Digital Marketing Agency">
+    <meta property="og:description" content="Transform your business with our award-winning digital marketing, SEO optimization, and web development services.">
+    <meta property="og:image" content="logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://realgrowthtech.com/">
+    <meta property="twitter:title" content="Real Growth Tech | Premium Digital Marketing Agency">
+    <meta property="twitter:description" content="Transform your business with our award-winning digital marketing, SEO optimization, and web development services.">
+    <meta property="twitter:image" content="logo.png">
+
+    <!-- LocalBusiness Schema (GEO Optimization) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Real Growth Tech",
+      "image": "logo.png",
+      "telephone": "+917483082922",
+      "email": "sindheraghav@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "url": "https://realgrowthtech.com/"
+    }
+    </script>
+
+    <!-- FAQ Schema (AEO Optimization) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What services does Real Growth Tech offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer a comprehensive suite of digital marketing services including Web Design & Development, SEO Optimization, Social Media Marketing, Content Marketing, SEM Advertising, and Analytics & Reporting."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How can SEO Optimization help my business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SEO Optimization improves your website's visibility on search engines like Google, driving more organic traffic, increasing brand awareness, and generating high-quality leads."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Do you provide services outside of India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, while we have a strong presence in India, we provide digital marketing and web development services to clients globally."
+        }
+      }]
+    }
+    </script>
+    <title>Real Growth Tech | Premium Digital Marketing Agency</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,18 +74,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script>
-        tailwind.config = {
+                tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         brand: {
-                            dark: '#0A0A14',
-                            deep: '#1A1A2E',
-                            purple: '#8A2BE2',
-                            pink: '#FF1493',
-                            blue: '#00BFFF',
-                            muted: '#A0A0A0',
-                            light: '#E0E0E0'
+                            dark: '#05050A',
+                            deep: '#0F0F1A',
+                            purple: '#9D4EDD',
+                            pink: '#FF2A93',
+                            blue: '#00D4FF',
+                            muted: '#9CA3AF',
+                            light: '#F3F4F6'
                         }
                     },
                     fontFamily: {
@@ -32,11 +95,16 @@
                     animation: {
                         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                         'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 3s ease-in-out infinite alternate',
                     },
                     keyframes: {
                         float: {
                             '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 10px rgba(157, 78, 221, 0.2)' },
+                            '100%': { boxShadow: '0 0 25px rgba(157, 78, 221, 0.6)' }
                         }
                     }
                 }
@@ -45,66 +113,68 @@
     </script>
 
     <style>
-        body {
-            background-color: #0A0A14;
-            color: #FFFFFF;
+                body {
+            background-color: #05050A;
+            color: #F3F4F6;
             font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         .glass-card {
-            background: rgba(26, 26, 46, 0.6);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(15, 15, 26, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .glass-card:hover {
-            border-color: rgba(138, 43, 226, 0.5);
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(157, 78, 221, 0.4);
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(157, 78, 221, 0.2);
         }
 
         .gradient-text {
-            background: linear-gradient(90deg, #8A2BE2, #FF1493, #00BFFF);
-            background-size: 200% auto;
+            background: linear-gradient(to right, #9D4EDD, #FF2A93, #00D4FF, #9D4EDD);
+            background-size: 300% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: shine 5s linear infinite;
+            animation: shine 6s linear infinite;
         }
 
         @keyframes shine {
-            to { background-position: 200% center; }
+            to { background-position: 300% center; }
         }
 
         .hero-gradient {
-            background: radial-gradient(circle at top right, rgba(138, 43, 226, 0.15), transparent),
-                        radial-gradient(circle at bottom left, rgba(0, 191, 255, 0.15), transparent);
+            background: radial-gradient(circle at top right, rgba(157, 78, 221, 0.15), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(0, 212, 255, 0.15), transparent 40%);
         }
 
         .nav-blur {
-            backdrop-filter: blur(20px);
-            background: rgba(10, 10, 20, 0.8);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            background: rgba(5, 5, 10, 0.7);
         }
 
         .mobile-menu-active {
             transform: translateX(0) !important;
         }
 
-        /* Video Background Overlay */
         .video-overlay {
-            background: linear-gradient(to bottom, rgba(10, 10, 20, 0.7), rgba(10, 10, 20, 0.9));
+            background: linear-gradient(to bottom, rgba(5, 5, 10, 0.6), rgba(5, 5, 10, 0.95));
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0A0A14; }
-        ::-webkit-scrollbar-thumb { background: #1A1A2E; border-radius: 10px; border: 2px solid #0A0A14; }
-        ::-webkit-scrollbar-thumb:hover { background: #8A2BE2; }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #05050A; }
+        ::-webkit-scrollbar-thumb { background: #1F1F33; border-radius: 10px; border: 2px solid #05050A; }
+        ::-webkit-scrollbar-thumb:hover { background: #9D4EDD; }
 
         .pricing-highlight {
-            background: linear-gradient(145deg, rgba(138, 43, 226, 0.1), rgba(255, 20, 147, 0.05));
-            border: 2px solid #8A2BE2;
+            background: linear-gradient(145deg, rgba(157, 78, 221, 0.15), rgba(255, 42, 147, 0.05));
+            border: 2px solid #9D4EDD;
+            box-shadow: 0 0 30px rgba(157, 78, 221, 0.15);
         }
     </style>
 </head>
@@ -160,12 +230,16 @@
             <div class="absolute inset-0 video-overlay"></div>
         </div>
         
-        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
-            <h1 class="font-display text-5xl md:text-8xl font-black mb-6 tracking-tighter">
+
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
+            <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tighter leading-tight">
                 REAL GROWTH <br><span class="gradient-text">TECH</span>
             </h1>
-            <p class="text-lg md:text-2xl text-brand-light font-medium tracking-widest uppercase mb-10 opacity-90">
-                Website Designing • Development • SEO • Lead Gen
+            <h2 class="text-xl md:text-3xl text-white font-bold mb-4 opacity-100">
+                Premium Digital Marketing Agency
+            </h2>
+            <p class="text-lg md:text-xl text-brand-light font-medium tracking-wide mb-10 opacity-90 max-w-2xl mx-auto">
+                We craft data-driven SEO strategies, stunning web design, and targeted lead generation to scale your business globally.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="#services" class="group relative px-8 py-4 w-64 rounded-full overflow-hidden border-2 border-brand-purple transition-all hover:bg-brand-purple">
@@ -406,6 +480,35 @@
         </div>
     </section>
 
+
+    <!-- FAQ Section (AEO Optimization) -->
+    <section id="faq" class="py-24 relative overflow-hidden bg-brand-deep/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-display font-bold mb-6">
+                    Frequently Asked <span class="gradient-text">Questions</span>
+                </h2>
+                <p class="text-brand-muted text-lg">
+                    Clear answers for your digital growth journey.
+                </p>
+            </div>
+            <div class="space-y-6">
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-3 text-brand-purple">What services does Real Growth Tech offer?</h3>
+                    <p class="text-brand-light opacity-90 leading-relaxed">We offer a comprehensive suite of digital marketing services including Web Design & Development, SEO Optimization, Social Media Marketing, Content Marketing, SEM Advertising, and Analytics & Reporting.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-3 text-brand-pink">How can SEO Optimization help my business?</h3>
+                    <p class="text-brand-light opacity-90 leading-relaxed">SEO Optimization improves your website's visibility on search engines like Google, driving more organic traffic, increasing brand awareness, and generating high-quality leads.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-3 text-brand-blue">Do you provide services outside of India?</h3>
+                    <p class="text-brand-light opacity-90 leading-relaxed">Yes, while we have a strong presence in India, we provide premium digital marketing and web development services to clients globally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Pricing Section -->
     <section id="pricing" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -554,25 +657,65 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-12 border-t border-white/5">
+        <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 bg-brand-deep">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-                <div class="flex items-center gap-3">
-                    <img src="logo.png" alt="Real Growth Tech Logo">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-1">
+                    <img src="logo.png" alt="Real Growth Tech Logo" class="h-10 mb-6">
+                    <p class="text-brand-muted text-sm leading-relaxed mb-6">
+                        Real Growth Tech is a premier digital marketing agency dedicated to scaling your business through innovative web design, SEO, and targeted lead generation strategies.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-brand-light hover:bg-brand-purple hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-brand-light hover:bg-brand-blue hover:text-white transition-all"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-brand-light hover:bg-brand-pink hover:text-white transition-all"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-brand-light hover:bg-brand-purple hover:text-white transition-all"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
-                <div class="flex gap-8">
-                    <a href="#" class="text-brand-muted hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-brand-muted hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-brand-muted hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-brand-muted hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">Services</h4>
+                    <ul class="space-y-3 text-brand-muted text-sm">
+                        <li><a href="#services" class="hover:text-brand-purple transition-colors">Web Design & Development</a></li>
+                        <li><a href="#services" class="hover:text-brand-purple transition-colors">SEO Optimization</a></li>
+                        <li><a href="#services" class="hover:text-brand-purple transition-colors">Social Media Marketing</a></li>
+                        <li><a href="#services" class="hover:text-brand-purple transition-colors">Content Marketing</a></li>
+                        <li><a href="#services" class="hover:text-brand-purple transition-colors">SEM Advertising</a></li>
+                    </ul>
                 </div>
-                <div class="text-brand-muted text-sm space-x-6">
-                    <a href="#services" class="hover:text-brand-purple transition-colors">Services</a>
-                    <a href="#why-us" class="hover:text-brand-purple transition-colors">Why Us</a>
-                    <a href="#pricing" class="hover:text-brand-purple transition-colors">Pricing</a>
-                    <a href="mailto:sindheraghav@gmail.com" class="hover:text-brand-purple transition-colors">Contact</a>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">Company</h4>
+                    <ul class="space-y-3 text-brand-muted text-sm">
+                        <li><a href="#why-us" class="hover:text-brand-purple transition-colors">Why Choose Us</a></li>
+                        <li><a href="#pricing" class="hover:text-brand-purple transition-colors">Pricing Plans</a></li>
+                        <li><a href="#faq" class="hover:text-brand-purple transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-brand-purple transition-colors">Privacy Policy</a></li>
+                    </ul>
                 </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">Contact Us (India HQ)</h4>
+                    <ul class="space-y-4 text-brand-muted text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-brand-purple mt-1"></i>
+                            <span>Serving clients globally from our headquarters in India.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-brand-pink"></i>
+                            <a href="tel:+917483082922" class="hover:text-white transition-colors">+91 74830 82922</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-brand-blue"></i>
+                            <a href="mailto:sindheraghav@gmail.com" class="hover:text-white transition-colors">sindheraghav@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 text-center text-sm text-brand-muted">
+                <p>&copy; 2024 Real Growth Tech. All rights reserved. Designed for optimal Digital Growth.</p>
             </div>
         </div>
     </footer>
